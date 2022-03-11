@@ -1,14 +1,14 @@
 package com.company.entities;
 
 public class Inscricao {
-    Integer idInscricao;
-    Corredor corredor;
-    Categoria categoria;
+    private Integer idInscricao;
+    private Corredor corredor;
+    private Integer idCategoria;
 
-    public Inscricao(Integer idInscricao, Corredor corredor, Categoria categoria) {
+    public Inscricao(Integer idInscricao, Corredor corredor, Integer idCategoria) {
         this.idInscricao = idInscricao;
         this.corredor = corredor;
-        this.categoria = categoria;
+        this.idCategoria = idCategoria;
     }
 
     public Integer getIdInscricao() {
@@ -27,11 +27,19 @@ public class Inscricao {
         this.corredor = corredor;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public Integer getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    @Override
+    public String toString() {
+        return "Inscricao{" +
+                "idInscricao=" + idInscricao +
+                ", corredor=" + corredor +
+                '}';
     }
 }

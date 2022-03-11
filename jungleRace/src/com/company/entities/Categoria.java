@@ -1,11 +1,11 @@
 package com.company.entities;
 
 public class Categoria {
-    String categoria;
-    Boolean menorIdade;
-    Boolean maiorIdade;
-    Double precoMenorIdade;
-    Double precoMaiorIdade;
+    private String categoria;
+    private Boolean menorIdade;
+    private Boolean maiorIdade;
+    private Double precoMenorIdade;
+    private Double precoMaiorIdade;
 
     public Categoria(String categoria, Boolean menorIdade, Boolean maiorIdade, Double precoMenorIdade, Double precoMaiorIdade) {
         this.categoria = categoria;

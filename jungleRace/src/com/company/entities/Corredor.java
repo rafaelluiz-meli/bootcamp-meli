@@ -2,15 +2,16 @@ package com.company.entities;
 
 public class Corredor {
 
-    String RG;
-    String nome;
-    String sobrenome;
-    Integer idade;
-    String numeroDoCelular;
-    String numeroDeEmergencia;
-    String tipoSanguineo;
+    private String RG;
+    private String nome;
+    private String sobrenome;
+    private Integer idade;
+    private String numeroDoCelular;
+    private String numeroDeEmergencia;
+    private String tipoSanguineo;
+    private Integer idCategoria;
 
-    public Corredor(String RG, String nome, String sobrenome, Integer idade, String numeroDoCelular, String numeroDeEmergencia, String tipoSanguineo) {
+    public Corredor(String RG, String nome, String sobrenome, Integer idade, String numeroDoCelular, String numeroDeEmergencia, String tipoSanguineo, Integer idCategoria) {
         this.RG = RG;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -18,6 +19,7 @@ public class Corredor {
         this.numeroDoCelular = numeroDoCelular;
         this.numeroDeEmergencia = numeroDeEmergencia;
         this.tipoSanguineo = tipoSanguineo;
+        this.idCategoria = idCategoria;
     }
 
     public String getRG() {
@@ -76,16 +78,24 @@ public class Corredor {
         this.tipoSanguineo = tipoSanguineo;
     }
 
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
     @Override
     public String toString() {
         return "Corredor{" +
-                "RG :'" + RG + '\'' +
-                ", Nome='" + nome + '\'' +
-                ", Sobrenome='" + sobrenome + '\'' +
-                ", Idade=" + idade +
-                ", Numero do Celular :'" + numeroDoCelular + '\'' +
-                ", Número de Emergência :'" + numeroDeEmergencia + '\'' +
-                ", Tipo Sanguíneo : '" + tipoSanguineo + '\'' +
+                "RG='" + RG + '\'' +
+                ", nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", idade=" + idade +
+                ", numeroDoCelular='" + numeroDoCelular + '\'' +
+                ", numeroDeEmergencia='" + numeroDeEmergencia + '\'' +
+                ", tipoSanguineo='" + tipoSanguineo + '\'' +
                 '}';
     }
 }
