@@ -11,7 +11,7 @@ public class Main {
         try {
             result = b/a;
         } catch (ArithmeticException e) {
-            System.out.println("Ocorreu um erro");
+            throw new IllegalArgumentException("Não pode ser dividido por zero");
         }
         System.out.println("Programa Finalizado !");
     }
