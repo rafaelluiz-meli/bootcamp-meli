@@ -19,7 +19,8 @@ public class NaoPereciveis extends Produto{
     @Override
     public String toString() {
         return "NaoPereciveis{" +
-                "tipo='" + tipo + '\'' +
-                '}';
+                super.toString() +
+                ", tipo='" + tipo + '\'' +
+                '}' + '}';
     }
 }

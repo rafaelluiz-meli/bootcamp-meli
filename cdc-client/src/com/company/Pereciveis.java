@@ -27,4 +27,12 @@ public class Pereciveis extends Produto{
         }
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "Pereciveis{" +
+                super.toString() +
+                ", diasParaVencer=" + diasParaVencer +
+                '}' + '}';
+    }
 }

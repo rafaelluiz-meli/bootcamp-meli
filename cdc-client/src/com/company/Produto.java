@@ -33,7 +33,6 @@ public class Produto {
     public String toString() {
         return "Produto{" +
                 "nome='" + nome + '\'' +
-                ", preco=" + preco +
-                '}';
+                ", preco=" + preco;
     }
 }
