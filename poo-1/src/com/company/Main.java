@@ -20,6 +20,5 @@ public class Main {
         } else if (pessoa2.calcularIMC() == 1){
             System.out.println("Sobrepeso");
         }
-
     }
 }
