@@ -15,6 +15,11 @@ public class Vaca extends Animal implements Herbivoro {
     }
 
     @Override
+    public void comer() {
+        comerPasto();
+    }
+
+    @Override
     public void comerPasto() {
         System.out.println("Comendo pasto...");
     }

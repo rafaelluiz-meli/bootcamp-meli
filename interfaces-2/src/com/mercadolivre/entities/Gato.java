@@ -15,6 +15,11 @@ public class Gato extends Animal implements Carnivoro {
     }
 
     @Override
+    public void comer() {
+        comerCarne();
+    }
+
+    @Override
     public void comerCarne() {
         System.out.println("Comendo carne...");
     }

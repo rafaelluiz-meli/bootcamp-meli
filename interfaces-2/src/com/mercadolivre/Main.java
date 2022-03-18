@@ -1,10 +1,15 @@
 package com.mercadolivre;
 
+import com.mercadolivre.entities.Animal;
 import com.mercadolivre.entities.Cachorro;
 import com.mercadolivre.entities.Gato;
 import com.mercadolivre.entities.Vaca;
 
 public class Main {
+
+    public static void comerAnimal(Animal animal){
+        animal.comer();
+    }
 
     public static void main(String[] args) {
 
@@ -15,6 +20,10 @@ public class Main {
         System.out.println(cachorro.emitirSom());
         System.out.println(gato.emitirSom());
         System.out.println(vaca.emitirSom());
+
+        comerAnimal(cachorro);
+        comerAnimal(gato);
+        comerAnimal(vaca);
 
     }
 }
