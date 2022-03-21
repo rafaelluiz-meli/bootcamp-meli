@@ -3,15 +3,15 @@ package com.mercadolivre.entities;
 public class Veiculo {
     private Double velocidade;
     private Double aceleracao;
-    private Integer anguloDeGiro;
+    private Integer anguloGiro;
     private String placa;
     private Double peso;
     private Integer rodas;
 
-    public Veiculo(Double velocidade, Double aceleracao, Integer anguloDeGiro, String placa, Double peso, Integer rodas) {
+    public Veiculo(Double velocidade, Double aceleracao, Integer anguloGiro, String placa, Double peso, Integer rodas) {
         this.velocidade = velocidade;
         this.aceleracao = aceleracao;
-        this.anguloDeGiro = anguloDeGiro;
+        this.anguloGiro = anguloGiro;
         this.placa = placa;
         this.peso = peso;
         this.rodas = rodas;
@@ -33,12 +33,12 @@ public class Veiculo {
         this.aceleracao = aceleracao;
     }
 
-    public Integer getAnguloDeGiro() {
-        return anguloDeGiro;
+    public Integer getAnguloGiro() {
+        return anguloGiro;
     }
 
-    public void setAnguloDeGiro(Integer anguloDeGiro) {
-        this.anguloDeGiro = anguloDeGiro;
+    public void setAnguloGiro(Integer anguloGiro) {
+        this.anguloGiro = anguloGiro;
     }
 
     public String getPlaca() {
@@ -63,5 +63,17 @@ public class Veiculo {
 
     public void setRodas(Integer rodas) {
         this.rodas = rodas;
+    }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "velocidade=" + velocidade +
+                ", aceleracao=" + aceleracao +
+                ", anguloGiro=" + anguloGiro +
+                ", placa='" + placa + '\'' +
+                ", peso=" + peso +
+                ", rodas=" + rodas +
+                '}';
     }
 }
