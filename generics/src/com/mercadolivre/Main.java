@@ -1,6 +1,7 @@
 package com.mercadolivre;
 
 import java.math.BigDecimal;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -54,13 +55,14 @@ public class Main {
             }
         }
         filtro2.forEach(System.out::println);
-
+        System.out.println();
+        
         System.out.println("--------Preço médio dos carros--------");
         BigDecimal total = BigDecimal.ZERO;
-        BigDecimal media = BigDecimal.valueOf((double) veiculos.size());
+        BigDecimal media = new BigDecimal(veiculos.size());
         for(Veiculo v : veiculos){
             total = total.add(v.getPreco());
         }
-        System.out.println(total.divideAndRemainder(media));
+        System.out.println("Preço médio dos carros: R$ " + (total.divide(media , 2 ,1)));
     }
 }
