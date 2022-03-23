@@ -19,10 +19,13 @@ public class PersonagemController {
     PersonagemServiceImpl personagemService;
 
     @GetMapping(path = "/buscar/{nomeDoPersonagem}")
-    public ResponseEntity<PersonagemDTO> findByName(@PathVariable String nomeDoPersonagem){
-        //Personagem result = personagemServiceImpl.findByName(nomeDoPersonagem);
-        Personagem result = new Personagem("Luke",176,80.0,"black","purple","blue","1999","Male","Brazil","Unkhnow");
-        return ResponseEntity.ok(new PersonagemDTO(result));
+    public ResponseEntity<List<PersonagemDTO>> findByName(@PathVariable String nomeDoPersonagem){
+        List<Personagem> resultDTO = personagemService.findByName(nomeDoPersonagem);
+        List<PersonagemDTO> result = new ArrayList<>();
+        for(Personagem p : resultDTO){
+            result.add(new PersonagemDTO(p));
+        }
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping(path = "/personagens")

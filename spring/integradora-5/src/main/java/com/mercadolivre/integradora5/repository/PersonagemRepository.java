@@ -8,30 +8,38 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class PersonagemRepository {
 
-    public static final String STARWARS_JSON = "starwars.json";
+    private static final String JSON_FILE = "starwars.json";
 
-    public void inserir(Personagem personagem) {
-
-    }
-
-    public Personagem procurar(String nome) {
-
-        return null;
+    public List<Personagem> procurar(String nome) {
+        List<Personagem> result = new ArrayList<>();
+        try{
+            List<Personagem> lista = jsonParaList(JSON_FILE);
+            for (Personagem p : lista){
+                if(p.getName().indexOf(nome) != -1) {
+                    result.add(p);
+                }
+            }
+            Optional<Personagem> personagem = lista.stream().filter(a -> a.getName().contentEquals(nome)).findAny();
+        } catch (InputMismatchException ex){
+            ex.printStackTrace();
+        }
+        return result;
     }
 
     public List<Personagem> lista() {
+        return jsonParaList(JSON_FILE);
+    }
+
+    private List<Personagem> jsonParaList(String arquivoJSON){
         List<Personagem> result = new ArrayList<>();
         try{
-            byte[] mapData = Files.readAllBytes(Paths.get(STARWARS_JSON));
+            byte[] mapData = Files.readAllBytes(Paths.get(arquivoJSON));
             Personagem[] personagens = null;
-
             ObjectMapper objectMapper = new ObjectMapper();
             personagens = objectMapper.readValue(mapData, Personagem[].class);
             result = Arrays.asList(personagens);

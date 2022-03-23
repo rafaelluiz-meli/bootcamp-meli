@@ -18,8 +18,8 @@ public class PersonagemServiceImpl implements PersonagemService {
     }
 
     @Override
-    public synchronized Personagem findByName(String nome) {
-        return null;
+    public synchronized List<Personagem> findByName(String nome) {
+        return repository.procurar(nome);
     }
 
     @Override
