@@ -5,6 +5,6 @@ import org.springframework.http.HttpStatus;
 public class StudentNotFoundException extends ObterDiplomaException {
 
     public StudentNotFoundException(Long id) {
-        super("O aluno com Id " + id + " não está registrado.", HttpStatus.NOT_FOUND);
+        super("Student id: " + id + " not found.", HttpStatus.NOT_FOUND);
     }
 }
