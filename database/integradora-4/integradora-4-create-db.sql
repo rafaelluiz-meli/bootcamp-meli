@@ -1,4 +1,4 @@
-
+DROP `meli`;
 CREATE DATABASE IF NOT EXISTS `meli`;
 
 USE `meli`;
