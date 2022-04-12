@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "9277df02-d037-4b02-9b93-78a5fcf282dd",
+		"name": "Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{$server}}/articles",
+					"host": [
+						"{{$server}}"
+					],
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Livro JAVA III\",\n    \"authorList\": \n    [\n        {\"name\": \"Teles\"},\n        {\"name\": \"Alvaro\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{$server}}/create",
+					"host": [
+						"{{$server}}"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{$server}}/update/u7e8H4ABD6HoyYF2Defe?title=Livro JAVA I",
+					"host": [
+						"{{$server}}"
+					],
+					"path": [
+						"update",
+						"u7e8H4ABD6HoyYF2Defe"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Livro JAVA I"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{$server}}/delete/t7e3H4ABD6HoyYF2j-e5",
+					"host": [
+						"{{$server}}"
+					],
+					"path": [
+						"delete",
+						"t7e3H4ABD6HoyYF2j-e5"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "$server",
+			"value": "http://localhost:8080"
+		}
+	]
+}
