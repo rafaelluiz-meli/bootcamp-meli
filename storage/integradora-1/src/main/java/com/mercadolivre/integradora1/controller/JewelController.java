@@ -40,7 +40,7 @@ public class JewelController {
         return ResponseEntity.created(uri).body(jewelSaved);
     }
 
-    @GetMapping("/remove/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> removeJewel(@PathVariable Long id){
         jewelService.removeJewel(id);
         return ResponseEntity.ok("Jewel deleted.");
